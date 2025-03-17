@@ -1,0 +1,72 @@
+0 
+Total cost is 0
+0 1 
+Total cost is 5
+0 5 2 
+Total cost is 3
+0 5 2 3 
+Total cost is 12
+0 5 4 
+Total cost is 10
+0 5 
+Total cost is 2
+1 2 3 4 0 
+Total cost is 21
+1 
+Total cost is 0
+1 2 
+Total cost is 4
+1 2 3 
+Total cost is 13
+1 2 3 4 
+Total cost is 20
+1 2 3 5 
+Total cost is 16
+2 3 4 0 
+Total cost is 17
+2 3 4 0 1 
+Total cost is 22
+2 
+Total cost is 0
+2 3 
+Total cost is 9
+2 3 4 
+Total cost is 16
+2 3 5 
+Total cost is 12
+3 4 0 
+Total cost is 8
+3 4 0 1 
+Total cost is 13
+3 5 2 
+Total cost is 4
+3 
+Total cost is 0
+3 4 
+Total cost is 7
+3 5 
+Total cost is 3
+4 0 
+Total cost is 1
+4 0 1 
+Total cost is 6
+4 0 5 2 
+Total cost is 4
+4 0 5 2 3 
+Total cost is 13
+4 
+Total cost is 0
+4 0 5 
+Total cost is 3
+5 4 0 
+Total cost is 9
+5 4 0 1 
+Total cost is 14
+5 2 
+Total cost is 1
+5 2 3 
+Total cost is 10
+5 4 
+Total cost is 8
+5 
+Total cost is 0

@@ -2,10 +2,10 @@ CXX = g++
 
 CXXFLAGS = -ggdb -std=c++20 -Wall -Wextra -Werror -Wfatal-errors -pedantic
 
-all: dijkstras_main ladder_main
+all: ds_main ladder_main
 
-dijkstras_main: dijkstras_main.cpp ../lib/dijkstras.o
-	$(CXX) dijkstras_main.cpp ../lib/dijkstras.o -o dijkstras_main $(CXXFLAGS)
+ds_main: dijkstras_main.cpp ../lib/dijkstras.o
+	$(CXX) dijkstras_main.cpp ../lib/dijkstras.o -o ds_main $(CXXFLAGS)
 
 ../lib/dijkstras.o: dijkstras.h dijkstras.cpp
 	$(CXX) -c dijkstras.cpp -o ../lib/dijkstras.o $(CXXFLAGS)

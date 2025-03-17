@@ -34,7 +34,17 @@ struct Graph : public vector<vector<Edge>> {
 };
 
 //STUDENT-ADDED DUE TO EXISTNECE IN SLIDES
-using minHeap = priority_queue<pair<int, int>>; //pair<vertex, weight>
+struct Compare {
+    bool operator()(pair<int, int> a, pair<int, int> b) {
+        if (a.second > b.second) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+};
+using minHeap = priority_queue<pair<int, int>, vector<pair<int, int>>, Compare>; //pair<vertex, weight>
 
 inline istream& operator>>(istream& in, Graph& G) {
     if (!(in >> G.numVertices))
@@ -57,5 +67,8 @@ inline void file_to_graph(const string& filename, Graph& G) {
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous);
 vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination);
 void print_path(const vector<int>& v, int total);
+
+string get_arg(int argc, char *argv[], string def); //STUDENT-ADDED
+
 
 #endif

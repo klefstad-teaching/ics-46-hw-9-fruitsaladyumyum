@@ -75,6 +75,11 @@ void test_word_ladder() {
 
 
 int main() {
+    /*
+    string a = "nums";
+    vector<string> cars(20, a);
+    print_word_ladder(cars);
+    */
     test_edit_distance_within();
     test_is_adjacent();
     test_strcmpignorecase();
