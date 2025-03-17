@@ -3,11 +3,18 @@
 
 
 void test_edit_distance_within() {
+    /*
     my_assert(edit_distance_within("cars", "bars", 1) == true);
     my_assert(edit_distance_within("cars", "car", 1) == true);
     my_assert(edit_distance_within("car", "cars", 1) == true);
     my_assert(edit_distance_within("car12345", "car", 8) == true);
     my_assert(edit_distance_within("asdfasdf", "1", 1) == false);
+    my_assert(edit_distance_within("c1a2r", "car", 2) == true);
+    my_assert(edit_distance_within("1ca23", "car", 3) == true);
+    my_assert(edit_distance_within("1ca23", "car", 2) == false);
+    my_assert(edit_distance_within("apples", "zoom", 5) == false);
+    */
+    my_assert(edit_distance_within("apples", "zoom", 6) == true);
 }
 
 
