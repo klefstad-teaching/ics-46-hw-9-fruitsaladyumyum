@@ -170,15 +170,10 @@ void print_word_ladder(const vector<string>& ladder) {
     else {
         cout << "Word ladder found: ";
         for (string word : ladder) {
-            cout << word;
-            if (curr_idx < ladder.size()-1) {
-                cout << " ";
-            }
-            else {
-                cout << endl;
-            }
+            cout << word << " ";
             ++curr_idx;
         }
+        cout << endl;
     }
 };
 
