@@ -28,3 +28,12 @@ strcmpignorecase(b, a) == 0 passed
 strcmpignorecase(c, d) == 0 passed
 strcmpignorecase(e, f) != 0 passed
 strtolower(a) == b passed
+generate_word_ladder("sleep", "awake", word_list).size() == 8Word ladder found: sleep seep see wee woe woke awoke awake 
+ passed
+generate_word_ladder("car", "cheat", word_list).size() == 4Word ladder found: car cat chat cheat 
+ passed
+generate_word_ladder("Marty", "curls", word_list).size() == 6Word ladder found: marty carty carey cares cures curls 
+ passed
+generate_word_ladder("asdf", "car", word_list).size() == 0 passed
+generate_word_ladder("car", "Carss", word_list).size() == 0 passed
+generate_word_ladder("car", "car", word_list).size() == 0 passed
