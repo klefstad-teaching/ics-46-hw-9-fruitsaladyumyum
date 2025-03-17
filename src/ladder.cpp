@@ -56,8 +56,30 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
     //evalute the edit distance
     if (len_diff > d)
         return false;
-    else
-        return true;
+    else {
+        int num_edits = 0;
+        size_t str1_idx = 0;
+        size_t str2_idx = 0;
+        //for each character in both words
+        for (; (str1_idx < str1.size()) && (str2_idx < str2.size()) && (num_edits < d+1); ++str1_idx, ++str2_idx)
+            //if the two current chars are inequal
+            if (tolower(str1[str1_idx]) != tolower(str2[str2_idx])) {
+                //if the next char in a word matches the current char of the other word, 
+                //then they are differing by at least one insertion/deletion
+                if (str1_idx < str1.size()-1 && tolower(str1[str1_idx+1]) == tolower(str2[str2_idx]))
+                    ++str1_idx;
+                else if (str2_idx < str2.size()-1 && tolower(str2[str2_idx+1]) == tolower(str1[str1_idx]))
+                    ++str2_idx;
+                //otherwise, a substitution is required
+                else {
+                    ; }
+                ++num_edits;
+            }
+        if (num_edits > d || (str1_idx+(d-num_edits)) < str1.size() || (str2_idx+(d-num_edits)) < str2.size())
+            return false;
+        else
+            return true;
+    }
 };
 
 
