@@ -1,21 +1,7 @@
 #include "ladder.h"
 
-/*
-3)  IMPLEMENT BFS USING A QUEUE TO STORE PARTIAL LADDERS THAT REPRESENT POSSIBILITIES TO EXPLORE. EACH PARTIAL LADDER
-    IS A STACK, MEANING YOUR OVERALL COLLECTION MUST BE A QUEUE OF STACKS.
 
-5)  Another subtle issue is that you must not reuse words that have been included in a previous shorter ladder. 
-    For example, suppose that you have added the partial ladder cat → cot → cog to the queue. 
-    Later on, if your code is processing ladder cat → cot → con, one neighbor of con is cog, 
-    so you might want to examine cat → cot → con → cog. But doing so is unnecessary, 
-    because your goal is to find the shortest valid word ladder, and you have already found one from cat to cog 
-    without the unnecessary word con. So you should not enqueue the longer ladder in your algorithm.
 
-    If you follow this rule properly, it will ensure that as soon as you've enqueued a ladder ending with a 
-    specific word, you've found a minimum-length path from the starting word to the end word in the ladder, 
-    so you will never have to enqueue that end word again. To implement this strategy, keep track of the set of 
-    words that have already been used in any ladder, and ignore those words if they come up again.
-*/
 int strcmpignorecase(const string& word1, const string& word2) {
     if (word1.size() != word2.size())
         return -1;
@@ -87,7 +73,10 @@ bool is_adjacent(const string& word1, const string& word2) {
     //check that the two words differ in length only by <= 1 chars.
     if (!edit_distance_within(word1, word2, 1))
         return false;
+    else
+        return true;
 
+    /*
     //if the two words are equivalent in size
     else if (word1.size() == word2.size()) {
         //then they must differ by only substitutions
@@ -128,6 +117,7 @@ bool is_adjacent(const string& word1, const string& word2) {
         else
             return true;
     }
+    */
 };
 
 
