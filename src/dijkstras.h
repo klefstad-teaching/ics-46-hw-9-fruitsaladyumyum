@@ -11,6 +11,7 @@
 using namespace std;
 
 constexpr int INF = numeric_limits<int>::max();
+constexpr int UNDEFINED = -1; //STUDENT-ADDED SINCE THEY WERE ON THE SLIDES
 
 struct Edge {
     int src=0;
@@ -31,6 +32,9 @@ struct Edge {
 struct Graph : public vector<vector<Edge>> {
     int numVertices=0;
 };
+
+//STUDENT-ADDED DUE TO EXISTNECE IN SLIDES
+using minHeap = priority_queue<pair<int, int>>; //pair<vertex, weight>
 
 inline istream& operator>>(istream& in, Graph& G) {
     if (!(in >> G.numVertices))

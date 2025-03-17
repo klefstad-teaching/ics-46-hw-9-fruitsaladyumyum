@@ -1,0 +1,33 @@
+edit_distance_within("cars", "bars", 1) == true passed
+edit_distance_within("cars", "car", 1) == true passed
+edit_distance_within("car", "cars", 1) == true passed
+edit_distance_within("car12345", "car", 8) == true passed
+edit_distance_within("asdfasdf", "1", 1) == false passed
+is_adjacent("cars", "bars") == true passed
+is_adjacent("bars", "cars") == true passed
+is_adjacent("cars", "cars ") == true passed
+is_adjacent("cars ", "cars") == true passed
+is_adjacent("caars", "cars") == true passed
+is_adjacent("cars", "caars") == true passed
+is_adjacent("cars", "c ars ") == false passed
+is_adjacent("sleep", "isle") == false passed
+is_adjacent("dis", "isle") == false passed
+is_adjacent("cars", "Cars ") == true passed
+is_adjacent("Cars", "cars ") == true passed
+is_adjacent("cbrs", "caRs") == true passed
+is_adjacent("caRs", "cbrs") == true passed
+strcmpignorecase(a, b) == 0 passed
+strcmpignorecase(b, a) == 0 passed
+strcmpignorecase(c, d) == 0 passed
+strcmpignorecase(e, f) != 0 passed
+strtolower(a) == b passed
+generate_word_ladder("cat", "dog", word_list).size() == 4 passed
+generate_word_ladder("marty", "curls", word_list).size() == 6 passed
+generate_word_ladder("code", "data", word_list).size() == 6 passed
+generate_word_ladder("work", "play", word_list).size() == 6 passed
+generate_word_ladder("sleep", "awake", word_list).size() == 8 passed
+generate_word_ladder("car", "cheat", word_list).size() == 4 passed
+generate_word_ladder("Marty", "curls", word_list).size() == 6 passed
+generate_word_ladder("asdf", "car", word_list).size() == 0 passed
+generate_word_ladder("car", "Carss", word_list).size() == 0 passed
+generate_word_ladder("car", "car", word_list).size() == 0 passed

@@ -11,9 +11,12 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <cctype> //STUDENT-ADDED
 
 using namespace std;
 
+int strcmpignorecase(const string& word1, const string& word2); //STUDENT-ADDED
+string strtolower(const string& word); //STUDENT-ADDED
 void error(string word1, string word2, string msg);
 bool edit_distance_within(const std::string& str1, const std::string& str2, int d);
 bool is_adjacent(const string& word1, const string& word2);
