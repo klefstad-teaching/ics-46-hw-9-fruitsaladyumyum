@@ -52,9 +52,13 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
             if (tolower(str1[str1_idx]) != tolower(str2[str2_idx])) {
                 //if the next char in a word matches the current char of the other word, 
                 //then they are differing by at least one insertion/deletion
-                if (str1_idx < str1.size()-1 && tolower(str1[str1_idx+1]) == tolower(str2[str2_idx]))
+                //the third condition checks for if the two strings, after executing the insertions/deletions
+                //we foudn were necessary, are of the same length now
+                if ((str1_idx < str1.size()-1) && (tolower(str1[str1_idx+1]) == tolower(str2[str2_idx])) 
+                    && (str1.size()-(str1_idx+1) != str2.size()-(str2_idx+1)))
                     ++str1_idx;
-                else if (str2_idx < str2.size()-1 && tolower(str2[str2_idx+1]) == tolower(str1[str1_idx]))
+                else if ((str2_idx < str2.size()-1) && (tolower(str2[str2_idx+1]) == tolower(str1[str1_idx])) 
+                    && (str1.size()-(str1_idx+1) != str2.size()-(str2_idx+1)))
                     ++str2_idx;
                 //otherwise, a substitution is required
                 else {
@@ -63,8 +67,7 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
             }
         if (num_edits > d || (str1_idx+(d-num_edits)) < str1.size() || (str2_idx+(d-num_edits)) < str2.size())
             return false;
-        else
-            return true;
+        return true;
     }
 };
 
@@ -148,11 +151,12 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
         //for each word in the dictionary
         for (string word : word_list) {
             if (is_adjacent(last_word, word)) {
-                if (!visited.contains(word)) { //TODO: do we need to ignore casing for this??
+                if (!visited.contains(word)) {
                     visited.insert(word);
                     vector<string> new_ladder = ladder; //make a copy of the ladder
                     new_ladder.push_back(word);
                     if (word == lowercase_end_word) { //ignore case
+                        print_word_ladder(new_ladder); //TOOD: DELETE LATER
                         return new_ladder;
                     }
                     ladder_queue.push(new_ladder);

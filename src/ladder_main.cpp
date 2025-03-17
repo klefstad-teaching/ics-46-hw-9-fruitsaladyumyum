@@ -3,7 +3,6 @@
 
 
 void test_edit_distance_within() {
-    /*
     my_assert(edit_distance_within("cars", "bars", 1) == true);
     my_assert(edit_distance_within("cars", "car", 1) == true);
     my_assert(edit_distance_within("car", "cars", 1) == true);
@@ -13,8 +12,8 @@ void test_edit_distance_within() {
     my_assert(edit_distance_within("1ca23", "car", 3) == true);
     my_assert(edit_distance_within("1ca23", "car", 2) == false);
     my_assert(edit_distance_within("apples", "zoom", 5) == false);
-    */
     my_assert(edit_distance_within("apples", "zoom", 6) == true);
+    my_assert(edit_distance_within("wee", "woe", 1) == true);
 }
 
 
@@ -23,6 +22,7 @@ void test_is_adjacent() {
     //substitutions
     my_assert(is_adjacent("cars", "bars") == true);
     my_assert(is_adjacent("bars", "cars") == true);
+    my_assert(is_adjacent("wee", "woe") == true);
     //insertion/deletion before/after word
     my_assert(is_adjacent("cars", "cars ") == true);
     my_assert(is_adjacent("cars ", "cars") == true);
